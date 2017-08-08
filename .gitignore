@@ -1,0 +1,19 @@
+# this folder will contain the compiled plugins, no need to store it in git
+/binaries/
+
+#ignoring osx build files completely for now
+/build/osx/
+
+# misc build files on osx
+/build/osx/build/
+
+# misc build files on windows
+/build/windows/x64
+/build/windows/x86
+/build/windows/.vs/
+*.suo
+*.sdf
+*.VC.db
+
+# hidden files on osx
+.DS_Store
