@@ -7,23 +7,23 @@
 static CFFGLPluginInfo PluginInfo(
 	FFGLPlugin::CreateInstance,			// Create method
 	"XXX1",								// Plugin unique ID
-	//this number is used the identify the plugin internally and needs to be different for each and every plugin
 	"Hello FFGL!",						// Plugin name
-	//the name as its displayed in the effect list
-	1,						   			// API major version number
-	//don't fuck with this													
+	1,						   			// API major version number												
 	500,								// API minor version number
-	//don't fuck with this
 	1,									// Plugin major version number
-	//if you like, you can use versioning here
 	000,								// Plugin minor version number
-	//if you like, you can use versioning here
 	FF_EFFECT,							// Plugin type
-	//this will let Resolume the plugin is an effect or source
 	"Completely empty example",			// Plugin description
-	//this info can be seen in the Help box
 	"Joris de Jong // Resolume"			// About 
-	//this info can be seen in the Help box
+
+	/*The important bits here are:
+	- "Plugin unique ID". This number is used the identify the plugin internally and needs to be different for each and every FFGL plugin in existence.
+	Is there a single list where you can see all the IDs that are already in use? No. Feel free to organise one. 
+	My plugins start with HV and then have two numbers identifying them. So HV01 is my first plugin. Resolume's plugins start with Axxx
+	- "Plugin name". This is the name as its displayed in Resolume's effect list. By putting FF_SOURCE you will create a source instead of an effect.
+	- "Plugin type". Here you can let Resolume know whether the plugin is a source or effect.
+	- "Plugin description" and "About" are shown in the Help panel in Resolume.
+	*/
 );
 
 FFGLPlugin::FFGLPlugin()
