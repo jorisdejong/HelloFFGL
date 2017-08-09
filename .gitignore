@@ -1,11 +1,11 @@
 # this folder will contain the compiled plugins, no need to store it in git
 /binaries/
 
-#ignoring osx build files completely for now
-/build/osx/
-
 # misc build files on osx
 /build/osx/build/
+/build/osx/FFGLPlugins.xcodeproj/xcuserdata/*.*
+/build/osx/FFGLPlugins.xcodeproj/project.xcworkspace/xcuserdata/*.*
+/build/osx/FFGLPlugins.xcodeproj/project.xcworkspace/xcshareddata/*.*
 
 # misc build files on windows
 /build/windows/x64
