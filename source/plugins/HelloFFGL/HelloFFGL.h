@@ -13,9 +13,12 @@ public:
 	FFGLPlugin();
 	~FFGLPlugin();
 
-	//for now, there is only 1 function that we need to implement for the plugin to work
-	//what it does is explained in the cpp file
+	//we now need to implement two functions
+	//what they do is explained in the cpp file
 	FFResult ProcessOpenGL(ProcessOpenGLStruct* pGL) override;
+	FFResult SetFloatParameter(unsigned int index, float value);
+
+
 
 	//this is boiler plate code that takes care of all the behind the scenes stuff used in creating a plugin
 	//in other words, we don't want to mess with this
