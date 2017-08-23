@@ -18,7 +18,9 @@ public:
 	FFResult ProcessOpenGL(ProcessOpenGLStruct* pGL) override;
 	FFResult SetFloatParameter(unsigned int index, float value);
 
-
+	//this is a float that will be set by Resolume, and we can use it to change stuff in our plugin
+	//we're going to link the value of this float to the value of the slider in Resolume
+	float aFloat;
 
 	//this is boiler plate code that takes care of all the behind the scenes stuff used in creating a plugin
 	//in other words, we don't want to mess with this

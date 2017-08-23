@@ -1,5 +1,9 @@
 #include "HelloFFGL.h"
 
+//here we define the word 'theFirstParam' to equal zero
+//this is handy so we don't have to remember which index each param has
+#define theFirstParam 0
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //  Plugin information
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,11 +34,14 @@ FFGLPlugin::FFGLPlugin()
 	: CFreeFrameGLPlugin()
 {
 	/*This creates a parameter
-	The 0 in the beginning means it's the first parameter. We'll use this later on to get the value from Resolume.
+	Instead of using 0 in the beginning, we use our define 'theFirstParam'
 	"Does Nothing" is the name (16 character maximum
 	FF_TYPE_STANDARD means it's a regular slider
 	and 0.5f is it's default value */
-	SetParamInfo( 0, "Does Nothing", FF_TYPE_STANDARD, 0.5f);
+	SetParamInfo( theFirstParam, "Does Nothing", FF_TYPE_STANDARD, 0.5f);
+
+	//because we set our param to be 0.5f by default, it makes sense that our float variable is also 0.5f
+	aFloat = 0.5f;
 }
 
 FFGLPlugin::~FFGLPlugin()
@@ -56,6 +63,14 @@ Later we'll use the value to do stuff in our plugin,
 but for now we just need to let Resolume know everything is fine by returning FF_SUCCESS */
 FFResult FFGLPlugin::SetFloatParameter(unsigned int index, float value)
 {
+	//now we use the callback to set our internal float variable, whenever the slider in Resolume is changed
+	switch (index)
+	{
+	case theFirstParam:
+		aFloat = value; //this means we've linked the first parameter to the first 
+		break;
+	}
+
 	return FF_SUCCESS;
 }
 
