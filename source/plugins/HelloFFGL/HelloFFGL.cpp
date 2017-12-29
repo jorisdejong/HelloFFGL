@@ -42,6 +42,14 @@ FFGLPlugin::FFGLPlugin()
 
 	//because we set our param to be 0.5f by default, it makes sense that our float variable also starts off at 0.5f
 	aFloat = 0.5f;
+
+	/*This will make sure that the plugin gets recognised as an EFFECT on both OSX and Windows.
+	A SOURCE has 0 inputs
+	An EFFECT has 1 input
+	A TRANSITION has 2 inputs
+	So why is the definition there in the CreateInstance call. I don't know. Someone must have thought that was a good idea at the time */
+	SetMinInputs( 1 );
+	SetMaxInputs( 1 );
 }
 
 FFGLPlugin::~FFGLPlugin()
