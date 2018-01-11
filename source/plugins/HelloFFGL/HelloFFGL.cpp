@@ -80,4 +80,17 @@ FFResult FFGLPlugin::SetFloatParameter(unsigned int index, float value)
 	return FF_SUCCESS;
 }
 
+/* GetFloatParameter is used by Resolume to display the value on the right side of the parameter
+   For instance if you're controlling rotation of something, you can a multiplier here to show the value in degrees */
+float FFGLPlugin::GetFloatParameter( unsigned int index )
+{
+	switch ( index )
+	{
+	case theFirstParam:
+		return aFloat; //right now, we just want to return the value of our float
+	}
+
+	return 0.0f; //to be safe, always return something
+}
+
 

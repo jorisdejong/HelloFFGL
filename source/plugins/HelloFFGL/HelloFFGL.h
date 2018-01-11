@@ -13,10 +13,12 @@ public:
 	FFGLPlugin();
 	~FFGLPlugin();
 
-	//we now need to implement two functions
+	//these are all FFGL functions that are used to communicate with Resolume
 	//what they do is explained in the cpp file
 	FFResult ProcessOpenGL(ProcessOpenGLStruct* pGL) override;
-	FFResult SetFloatParameter(unsigned int index, float value);
+	FFResult SetFloatParameter(unsigned int index, float value) override;
+	float GetFloatParameter( unsigned int index ) override;
+	
 
 	//this is a float that will be set by Resolume, and we can use it to change stuff in our plugin
 	//we're going to link the value of this float to the value of the slider in Resolume
