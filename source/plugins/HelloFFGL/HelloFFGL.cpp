@@ -73,7 +73,7 @@ FFResult FFGLPlugin::SetFloatParameter(unsigned int index, float value)
 	switch (index)
 	{
 	case theFirstParam:
-		aFloat = value; //this means we've linked the first parameter to the float
+		aFloat = value; //this means we're setting our float to whatever value the first parameter has in Resolume
 		break;
 	}
 
@@ -81,7 +81,7 @@ FFResult FFGLPlugin::SetFloatParameter(unsigned int index, float value)
 }
 
 /* GetFloatParameter is used by Resolume to display the value on the right side of the parameter
-   For instance if you're controlling rotation of something, you can a multiplier here to show the value in degrees */
+   For instance if you're controlling rotation of something, you can use a multiplier here to show the value in degrees */
 float FFGLPlugin::GetFloatParameter( unsigned int index )
 {
 	switch ( index )
