@@ -88,9 +88,13 @@ float FFGLPlugin::GetFloatParameter( unsigned int index )
 	{
 	case theFirstParam:
 		return aFloat; //right now, we just want to return the value of our float
+		break;
+	default:
+		return 0.0f; //to be safe, always return something
+		break;
 	}
 
-	return 0.0f; //to be safe, always return something
+	
 }
 
 
