@@ -58,11 +58,30 @@ FFGLPlugin::~FFGLPlugin()
 }
 
 /*ProcessOpenGL is like the draw() function in processing and openframeworks.
-Everything that happens in ProcessOpenGL happens everytime the plugin renders.
-Even though we're not doing anything yet, 
-we need to return FF_SUCCESS to let Resolume know everything is fine*/
+Everything that happens in ProcessOpenGL happens everytime the plugin renders.*/
 FFResult FFGLPlugin::ProcessOpenGL(ProcessOpenGLStruct *pGL)
 {
+	//clear the background to a nice neutral grey
+	glClearColor( 0.23f, 0.23f, 0.23f, 1.0f );
+	glClear( GL_COLOR_BUFFER_BIT );
+
+	//set the color to Arena cyan
+	glColor4f( 0.5f, 1.0f, 0.82f, 1.0f );
+	
+	//now, we create a variable to hold the coordinates of the four corners of our rectangle
+	GLfloat verts[] =
+	{
+		-0.5f, 0.5f, //top left
+		0.5f, 0.5f, //top right
+		0.5f, -0.5f, //bottom right
+		-0.5f, -0.5f //bottom left
+	};
+
+	//and we draw those corners as a triangle fan
+	glEnableClientState( GL_VERTEX_ARRAY );
+	glVertexPointer( 2, GL_FLOAT, 0, verts );
+	glDrawArrays( GL_TRIANGLE_FAN, 0, 4 );
+
 	return FF_SUCCESS;
 }
 
